@@ -3,6 +3,6 @@ FROM node:lts
 WORKDIR /app/client
 
 COPY package.json .
-RUN "npm install"
+RUN npm install
 COPY . .
-CMD [ "npm" , "run", "start"]
+CMD [ "npm" , "run", "dev"]
