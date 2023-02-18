@@ -1,0 +1,32 @@
+services:
+    server:
+        build:
+            context: ./server
+            dockerfile: Dockerfile
+        container_name: friska-server
+        volumes:
+            - ./server:/app/server
+            - /app/server/node_modules
+        ports:
+            - '8000:8000'
+        networks:
+            - friska-network
+
+    client:
+        build:
+            context: ./client
+            dockerfile: Dockerfile
+        container_name: friska-client
+        volumes:
+            - ./client:/app/client
+            - /app/client/node_modules
+        ports:
+            - '5173:5173'
+        networks:
+            - friska-network
+        depends_on:
+            - server
+
+networks:
+    friska-network:
+        driver: bridge

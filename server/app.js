@@ -5,7 +5,7 @@ const rateLimit = require('express-rate-limit');
 const mongoSanitize = require('express-mongo-sanitize');
 const xss = require('xss-clean');
 const cookieParser = require('cookie-parser');
-const AppError = require('./utils/appError');
+const AppError = require('./utils/AppError');
 const globalErrorHandler = require('./controllers/errorController');
 
 const productRouter = require('./routes/productRoutes');
@@ -24,7 +24,7 @@ if (process.env.NODE_ENV === 'development') {
 //     message: 'Too many requests from this IP, please try again in an hour!',
 // });
 
-app.use('/api', limiter);
+// app.use('/api', limiter);
 app.use((req, res, next) => {
     res.locals.user = undefined;
     next();
@@ -55,11 +55,14 @@ app.use((req, res, next) => {
 });
 
 // 3) ROUTES
-app.use('/products', productRouter);
+app.use('/api/products', productRouter);
 app.use('*', (req, res, next) => {
     res.status(500).json({
         status: 'fail',
         message: 'route not defined',
     });
 });
+
+app.use(globalErrorHandler);
+
 module.exports = app;
