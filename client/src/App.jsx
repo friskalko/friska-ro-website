@@ -5,22 +5,27 @@ import './App.scss';
 import HomePage from './pages/HomePage';
 import ProductsPage, { productsPageLoader } from './pages/ProductsPage';
 import ProductInfoPage, { productLoader } from './pages/ProductInfoPage';
-
+import AppLayout from './components/Layout/AppLayout';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 const router = createBrowserRouter([
     {
-        path: '/',
-        element: <HomePage />,
-    },
-    {
-        path: '/products',
-        element: <ProductsPage />,
-        loader: productsPageLoader,
-    },
-    {
-        path: '/products/view',
-        element: <ProductInfoPage />,
-        loader: productLoader,
+        element: <AppLayout />,
+        children: [
+            {
+                path: '/',
+                element: <HomePage />,
+            },
+            {
+                path: '/products',
+                element: <ProductsPage />,
+                loader: productsPageLoader,
+            },
+            {
+                path: '/products/view',
+                element: <ProductInfoPage />,
+                loader: productLoader,
+            },
+        ],
     },
 ]);
 

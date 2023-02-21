@@ -7,8 +7,8 @@ import API from '../utils/api';
 const ProductsPage = () => {
     const navigation = useNavigation();
     const products = useLoaderData();
-    console.log(products);
-    console.log(navigation);
+    // console.log(products);
+    // console.log(navigation);
     if (navigation.state == 'loading') return <h1>LOADING</h1>;
     return (
         <div className={styles['container']}>
@@ -25,7 +25,7 @@ export const productsPageLoader = async () => {
     const url = import.meta.env.VITE_BACKEND_URL;
 
     const resp = await API.getAllProducts();
+    // console.log(resp);
     const allProducts = resp.data.data.products;
-    // console.log(allProducts);
     return allProducts;
 };

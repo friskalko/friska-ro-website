@@ -1,6 +1,5 @@
 import React from 'react';
 import InfoCard from '../components/InfoCard';
-import Footer from '../components/Footer';
 const HomePage = () => {
     return (
         <div className="outer">
@@ -16,7 +15,6 @@ const HomePage = () => {
                     content="Individual - Proprietor"
                 />
             </section>
-            <Footer />
         </div>
     );
 };

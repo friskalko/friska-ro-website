@@ -27,10 +27,14 @@ exports.getOneProduct = catchAsync(async (req, res, next) => {
         product,
     };
 
-    res.status(200).json({
-        status: 'success',
-        data,
-    });
+    setTimeout(
+        () =>
+            res.status(200).json({
+                status: 'success',
+                data,
+            }),
+        2000
+    );
 });
 
 exports.createOneProduct = catchAsync(async (req, res, next) => {

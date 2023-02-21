@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Footer.module.scss';
-import logo from '../assets/aqua-logo-small.jpg';
+import logo from '../../assets/aqua-logo-small.jpg';
 const Footer = () => {
     return (
         <div className={styles['container']}>

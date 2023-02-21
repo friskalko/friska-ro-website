@@ -7,10 +7,12 @@ const xss = require('xss-clean');
 const cookieParser = require('cookie-parser');
 const AppError = require('./utils/AppError');
 const globalErrorHandler = require('./controllers/errorController');
-
+const cors = require('cors');
 const productRouter = require('./routes/productRoutes');
 
 const app = express();
+
+app.use(cors());
 
 // Development logging
 if (process.env.NODE_ENV === 'development') {
