@@ -1,9 +1,31 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import styles from './ProductInfoPage.module.scss';
+import { useLoaderData, useNavigation } from 'react-router-dom';
+import { ThreeCircles } from 'react-loader-spinner';
 import API from '../utils/api';
 const ProductInfoPage = () => {
     const product = useLoaderData();
     // console.log(product);
+
+    const navigation = useNavigation();
+
+    if (navigation.state == 'loading')
+        return (
+            <div className={styles['loading-spinner']}>
+                <ThreeCircles
+                    height="100"
+                    width="100"
+                    wrapperStyle={{}}
+                    wrapperClass=""
+                    visible={true}
+                    ariaLabel="three-circles-rotating"
+                    outerCircleColor="#1e3a8a"
+                    innerCircleColor="#1497be"
+                    middleCircleColor="#1e3a8a"
+                />
+            </div>
+        );
+
     return (
         <div>
             <ul>

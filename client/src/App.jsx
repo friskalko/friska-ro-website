@@ -5,8 +5,13 @@ import './App.scss';
 import HomePage from './pages/HomePage';
 import ProductsPage, { productsPageLoader } from './pages/ProductsPage';
 import ProductInfoPage, { productLoader } from './pages/ProductInfoPage';
+import AboutPage from './pages/AboutPage';
 import AppLayout from './components/Layout/AppLayout';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import {
+    createBrowserRouter,
+    RouterProvider,
+    useNavigation,
+} from 'react-router-dom';
 const router = createBrowserRouter([
     {
         element: <AppLayout />,
@@ -24,6 +29,10 @@ const router = createBrowserRouter([
                 path: '/products/view',
                 element: <ProductInfoPage />,
                 loader: productLoader,
+            },
+            {
+                path: '/about-us',
+                element: <AboutPage />,
             },
         ],
     },
