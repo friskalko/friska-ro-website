@@ -4,12 +4,28 @@ import { useLoaderData, useNavigation } from 'react-router-dom';
 import styles from './ProductsPage.module.scss';
 import ProductCard from '../components/ProductCard';
 import API from '../utils/api';
+import { ThreeCircles } from 'react-loader-spinner';
 const ProductsPage = () => {
     const navigation = useNavigation();
     const products = useLoaderData();
-    // console.log(products);
-    // console.log(navigation);
-    if (navigation.state == 'loading') return <h1>LOADING</h1>;
+
+    if (navigation.state == 'loading')
+        return (
+            <div className={styles['loading-spinner']}>
+                <ThreeCircles
+                    height="100"
+                    width="100"
+                    // color="#4fa94d"
+                    wrapperStyle={{}}
+                    wrapperClass=""
+                    visible={true}
+                    ariaLabel="three-circles-rotating"
+                    outerCircleColor="#1e3a8a"
+                    innerCircleColor="#1497be"
+                    middleCircleColor="#1e3a8a"
+                />
+            </div>
+        );
     return (
         <div className={styles['container']}>
             {products.map((product) => (

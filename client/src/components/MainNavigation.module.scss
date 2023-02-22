@@ -1,0 +1,20 @@
+.container {
+    .nav {
+        &-list {
+            list-style: none;
+            margin-left: auto;
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            gap: 25px;
+            padding: 25px;
+            &-item {
+            }
+        }
+    }
+}
+
+.link-active {
+    background-color: black;
+    color: white;
+}
