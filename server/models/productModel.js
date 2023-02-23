@@ -9,6 +9,8 @@ const productSchema = new mongoose.Schema({
 
     slug: String,
 
+    summary: { type: String },
+
     description: {
         type: String,
         required: [true, 'A product must have a description'],
