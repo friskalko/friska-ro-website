@@ -1,0 +1,22 @@
+@import '../index.scss';
+.container {
+    height: 400px;
+    width: 100%;
+    margin-top: 50px;
+    .main-container {
+        display: flex;
+        justify-content: space-around;
+        &__img {
+            border: 2px solid black;
+        }
+
+        &__info {
+            border: 2px solid green;
+            padding: 1rem;
+            & > div {
+                font-size: 5rem;
+                font-family: $font-display;
+            }
+        }
+    }
+}

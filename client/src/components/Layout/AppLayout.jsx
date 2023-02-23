@@ -5,13 +5,13 @@ import { Outlet, useNavigation } from 'react-router-dom';
 import { ThreeCircles } from 'react-loader-spinner';
 const AppLayout = () => {
     const navigation = useNavigation();
-    console.log(navigation.state);
-    if (navigation.state == 'loading') return <h1>Loading ...</h1>;
-    return (
-        <div style={layoutStyles}>
-            <Header />
-            {navigation.state == 'loading' ? (
-                <div styles={loadingSpinner}>
+
+    if (navigation.state == 'loading')
+        return (
+            <div style={layoutStyles}>
+                <Header />
+
+                <div style={loadingSpinner}>
                     <ThreeCircles
                         height="100"
                         width="100"
@@ -24,9 +24,15 @@ const AppLayout = () => {
                         middleCircleColor="#1e3a8a"
                     />
                 </div>
-            ) : (
-                <Outlet />
-            )}
+                <Footer />
+            </div>
+        );
+    return (
+        <div style={layoutStyles}>
+            <Header />
+
+            <Outlet />
+
             <Footer />
         </div>
     );

@@ -1,5 +1,10 @@
+@import '../index.scss';
+
 .container {
+    position: relative;
+    z-index: 100000000;
     .nav {
+        color: $color-secondary;
         &-list {
             list-style: none;
             margin-left: auto;
@@ -7,14 +12,19 @@
             justify-content: end;
             align-items: center;
             gap: 25px;
-            padding: 25px;
+            padding: 20px;
+            // color: $color-secondary;
             &-item {
+                font-family: $font-display;
             }
         }
     }
 }
 
 .link-active {
-    background-color: black;
-    color: white;
+    padding-bottom: 2px;
+    // background-color: black;
+    color: $color-secondary-light !important;
+    border-bottom: 2px solid $color-secondary-light;
+    // border-top: 2px solid $color-secondary-light;
 }
