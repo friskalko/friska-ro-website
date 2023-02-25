@@ -1,5 +1,13 @@
-.testClass {
-    background-color: red;
-    width: 100px;
-    height: 100px;
+@import '../index.scss';
+
+.specs {
+    &__heading {
+        font-size: 3rem;
+        color: $color-grey-dark-3;
+    }
+    &__table {
+        &-content {
+            font-size: 2rem;
+        }
+    }
 }
