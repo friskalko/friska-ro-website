@@ -18,11 +18,6 @@ const ProductInfoPage = () => {
 
     return (
         <div className={styles['container']}>
-            {/* <ul>
-                <li>{product._id}</li>
-                <li>{product.description}</li>
-              
-            </ul> */}
             <div className={styles['main-container']}>
                 <div className={styles['main-container__img']}>
                     <ImageSlider images={images} />
@@ -41,13 +36,11 @@ const summ =
 export default ProductInfoPage;
 
 export const productLoader = async ({ request }) => {
-    // const productID = request.url.searchParams.get('productID');
-    // console.log(productID);
     const url = new URL(request.url);
 
     const productID = url.searchParams.get('id');
     const resp = await API.getOneProduct(productID);
     const product = resp.data.data.product;
-    // console.log(resp.data.data);
+
     return product;
 };
