@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import styles from './ProductInfoPage.module.scss';
-
+import Specifications from '../components/Specifications';
 import API from '../utils/api';
 
 import ImageSlider from '../components/ImageSlider';
@@ -27,12 +27,26 @@ const ProductInfoPage = () => {
                     <div className={styles['summary']}> {summ}</div>
                 </div>
             </div>
+            <div className={styles['description']}>
+                <h2 className={styles['description__heading']}>
+                    Product Description
+                </h2>
+                <p className={styles['description__text']}>
+                    {product.description} Lorem ipsum dolor sit amet,
+                    consectetur adipisicing elit. Quisquam, est labore
+                    repudiandae ullam dignissimos veritatis unde quos officia
+                    sit facilis vel rerum laudantium iusto culpa! Placeat nisi
+                    laboriosam quasi non.
+                </p>
+            </div>
+            <div className={styles['specs-container']}>
+                <Specifications properties={product.properties} />
+            </div>
         </div>
     );
 };
 
-const summ =
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae neque odio. Curabitur vel pharetra quam. Phasellus non dui elit. Maecenas tempor odio eget mauris rhoncus, in euismod enim pharetra.';
+const summ = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ';
 export default ProductInfoPage;
 
 export const productLoader = async ({ request }) => {
