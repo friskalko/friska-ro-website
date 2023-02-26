@@ -31,26 +31,33 @@
     }
 
     .description {
-        margin: 25px auto;
-        padding: 25px;
+        margin: 20px auto;
+        padding: 20px;
         color: $color-grey-dark-3;
         width: 75%;
         &__heading {
             font-size: 3rem;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
         &__text {
             font-size: 2.25rem;
         }
+        border-bottom: 2px solid $color-grey-dark-2;
     }
     @media (max-width: 700px) {
         .description {
             width: 100%;
-            &__heading {
-            }
-            &__text {
-            }
+            // &__heading {
+            // }
+            // &__text {
+            // }
         }
+    }
+    .specs-container {
+        width: 75%;
+        margin: 20px auto;
+        padding: 20px;
+        // margin-left: 250px;
     }
 }
 
@@ -63,18 +70,4 @@
             margin-bottom: 50px;
         }
     }
-}
-
-@media (max-width: 700px) {
-    .description {
-        width: 100% !important;
-        &__heading {
-        }
-        &__text {
-        }
-    }
-}
-
-.specs-container {
-    margin-left: 250px;
 }
