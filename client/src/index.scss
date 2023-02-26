@@ -20,6 +20,17 @@ html {
     scroll-behavior: smooth;
 }
 
+@media (max-width: 500px) {
+    html {
+        font-size: 56.25%;
+    }
+}
+@media (max-width: 400px) {
+    html {
+        font-size: 50%;
+    }
+}
+
 a,
 a:link,
 a:visited,
