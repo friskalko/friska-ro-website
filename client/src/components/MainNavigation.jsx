@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './MainNavigation.module.scss';
 import { NavLink } from 'react-router-dom';
+import Sidebar from './Sidebar';
+
 const MainNavigation = () => {
+    const [sidebarOpen, setSidebarOpen] = useState(false);
     return (
         <div className={styles['container']}>
+            <Sidebar />
             <nav className={styles['nav']}>
+                <h2 className={styles['brand-name']}>G1 Aqua</h2>
+
                 <ul className={styles['nav-list']}>
                     <li className={styles['nav-list-item']}>
                         <NavLink

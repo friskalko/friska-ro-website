@@ -3,8 +3,15 @@
 .container {
     position: relative;
     z-index: 100000000;
+    height: 70px;
     .nav {
+        display: flex;
+        align-items: center;
         color: $color-secondary;
+        height: 100%;
+        .brand-name {
+            margin: auto 25px;
+        }
         &-list {
             list-style: none;
             margin-left: auto;
@@ -19,6 +26,14 @@
             }
         }
     }
+    @media (max-width: 700px) {
+        .nav-list {
+            display: none;
+        }
+        .nav {
+            justify-content: end;
+        }
+    }
 }
 
 .link-active {
@@ -27,4 +42,10 @@
     color: $color-secondary-light !important;
     border-bottom: 2px solid $color-secondary-light;
     // border-top: 2px solid $color-secondary-light;
+}
+
+@media (max-width: 700px) {
+    .nav-list {
+        display: none;
+    }
 }
