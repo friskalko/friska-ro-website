@@ -24,6 +24,16 @@ const MainNavigation = () => {
                     </li>
                     <li className={styles['nav-list-item']}>
                         <NavLink
+                            to="/products"
+                            className={({ isActive }) =>
+                                isActive ? styles['link-active'] : undefined
+                            }
+                        >
+                            Products
+                        </NavLink>
+                    </li>
+                    <li className={styles['nav-list-item']}>
+                        <NavLink
                             to="/about-us"
                             className={({ isActive }) =>
                                 isActive ? styles['link-active'] : undefined
@@ -34,12 +44,12 @@ const MainNavigation = () => {
                     </li>
                     <li className={styles['nav-list-item']}>
                         <NavLink
-                            to="/products"
+                            to="/contact-us"
                             className={({ isActive }) =>
                                 isActive ? styles['link-active'] : undefined
                             }
                         >
-                            Products
+                            Contact Us
                         </NavLink>
                     </li>
                 </ul>
