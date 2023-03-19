@@ -59,6 +59,28 @@
         padding: 20px;
         // margin-left: 250px;
     }
+
+    .send-enquiry {
+        border: 2px solid $color-secondary-dark;
+        background-color: $color-secondary-dark;
+        color: $color-white;
+        font-size: 2.5rem;
+        padding: 1rem 1.5rem;
+        margin-top: 1rem;
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+        font-family: $font-display;
+    }
+
+    .send-enquiry:hover {
+        cursor: pointer;
+        background-color: $color-secondary-light;
+        border: 2px solid $color-secondary-light;
+        color: $color-white;
+    }
 }
 
 @media (max-width: 850px) {
@@ -70,4 +92,73 @@
             margin-bottom: 50px;
         }
     }
+}
+.form__group {
+    display: flex;
+    flex-direction: column;
+    // justify-content: ;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.form__group label {
+    font-size: 1.75rem;
+    margin-bottom: 0.25rem;
+    color: $color-grey-dark-3;
+    font-weight: bold;
+}
+.form__group input,
+.form__group textarea {
+    width: 30rem;
+    font-size: 1.5rem;
+    border: 1.5px solid $color-secondary-dark;
+    padding: 0.5rem 1rem;
+
+    outline: none;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    background-color: #fefefe;
+}
+
+.red-star {
+    color: red;
+}
+
+.submit-btn {
+    border: 2px solid $color-secondary-dark;
+    background-color: $color-secondary-dark;
+    color: $color-white;
+    font-size: 2.5rem;
+    padding: 0.75rem 1.25rem;
+    margin-top: 1rem;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    font-family: $font-display;
+}
+
+.submit-btn:hover {
+    cursor: pointer;
+    background-color: $color-secondary-light;
+    border: 2px solid $color-secondary-light;
+    color: $color-white;
+}
+
+.form__group--submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-heading {
+    text-align: center;
+    color: $color-primary-darker;
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
 }
