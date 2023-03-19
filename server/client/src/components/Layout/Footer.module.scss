@@ -1,0 +1,26 @@
+@import '../../index.scss';
+
+.container {
+    // margin: 5rem auto;
+    width: 100%;
+    .footer {
+        background-color: $color-primary-darker;
+        height: 250px;
+        width: 100%;
+
+        &__image-container {
+            text-align: center;
+            // padding-top: 10px;
+            img {
+                margin-top: 25px;
+            }
+        }
+        &__name {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 200;
+            margin-top: 25px;
+            color: $color-grey-light-1;
+        }
+    }
+}

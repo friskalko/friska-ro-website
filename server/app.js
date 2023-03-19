@@ -48,7 +48,8 @@ app.use(xss());
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 // Serving static files
-app.use(express.static(`${__dirname}/public`));
+// app.use(express.static(`${__dirname}/public`));
+app.use(express.static(path.join(__dirname, 'client/dist')));
 
 // Test middleware
 app.use((req, res, next) => {
@@ -58,6 +59,11 @@ app.use((req, res, next) => {
 
 // 3) ROUTES
 app.use('/api/products', productRouter);
+
+app.get('/*', function (req, res) {
+    res.sendFile(path.join(__dirname, 'client/dist', 'index.html'));
+});
+
 app.use('*', (req, res, next) => {
     res.status(500).json({
         status: 'fail',
