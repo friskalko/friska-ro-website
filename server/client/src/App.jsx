@@ -12,6 +12,7 @@ import {
     RouterProvider,
     useNavigation,
 } from 'react-router-dom';
+import ContactPage from './pages/ContactPage';
 const router = createBrowserRouter([
     {
         element: <AppLayout />,
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
             {
                 path: '/about-us',
                 element: <AboutPage />,
+            },
+            {
+                path: '/contact-us',
+                element: <ContactPage />,
             },
         ],
     },

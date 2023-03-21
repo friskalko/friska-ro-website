@@ -1,0 +1,43 @@
+@import '../index.scss';
+
+.contact-container {
+    margin-top: 2rem;
+}
+.contact-heading {
+    color: $color-grey-dark-3;
+    text-align: center;
+    font-size: 5rem;
+}
+
+.contact-content {
+    text-align: center;
+    color: $color-grey-dark-3;
+    font-size: 3rem;
+    // padding: 5rem;
+    padding-top: 2rem;
+}
+.name-heading {
+    text-align: center;
+    font-size: 4rem;
+}
+.contact-item-container {
+    margin: 2rem;
+}
+
+.contact-icon {
+    font-size: 5rem;
+}
+
+@media (max-width: 500px) {
+    .name-heading {
+        font-size: 3rem;
+    }
+
+    .contact-icon {
+        font-size: 4rem;
+    }
+
+    .contact-content {
+        font-size: 2.75rem;
+    }
+}

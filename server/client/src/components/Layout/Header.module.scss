@@ -1,6 +1,7 @@
 @import '../../index.scss';
 
 .container {
+    z-index: 1;
     width: 100%;
     margin-bottom: 75px;
 }
@@ -10,7 +11,7 @@
     // height: 75px;
     position: fixed;
     // background-color: $color-primary;
-    backdrop-filter: blur(50px);
+    backdrop-filter: blur(25px);
     // border-bottom: 1px solid $color-primary-dark;
     color: white;
     font-weight: bold;

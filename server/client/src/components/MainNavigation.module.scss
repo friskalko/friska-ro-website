@@ -1,0 +1,113 @@
+@import '../index.scss';
+
+.container {
+    position: relative;
+    z-index: 100000000;
+    height: 70px;
+    .nav {
+        display: flex;
+        align-items: center;
+        color: $color-secondary;
+        height: 100%;
+        .brand-name {
+            margin: auto 25px;
+        }
+        &-list {
+            list-style: none;
+            margin-left: auto;
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            gap: 25px;
+            padding: 20px;
+            // color: $color-secondary;
+            &-item {
+                font-family: $font-display;
+            }
+        }
+    }
+    @media (max-width: 700px) {
+        .nav-list {
+            display: none;
+        }
+        // .nav {
+        //     justify-content: end;
+        // }
+    }
+}
+
+.link-active {
+    padding-bottom: 2px;
+    // background-color: black;
+    color: $color-secondary-light !important;
+    border-bottom: 2px solid $color-secondary-light;
+    // border-top: 2px solid $color-secondary-light;
+}
+
+@media (max-width: 700px) {
+    .nav-list {
+        display: none;
+    }
+
+    .nav {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+}
+
+@media (min-width: 700px) {
+    .menu-icon {
+        display: none;
+    }
+}
+
+.sidebar-content {
+    width: 40rem;
+    margin-top: 2rem;
+    padding: 2rem;
+}
+.sidebar-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2.5rem;
+}
+.sidebar-link {
+    font-size: 4rem;
+    color: $color-secondary-light;
+    padding-left: 2rem;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.sidebar-link:hover {
+    cursor: pointer;
+    background-color: $color-grey-light-2;
+    width: 30rem;
+}
+
+.sidebar-close-btn {
+    font-size: 3rem;
+    border: 2px solid $color-secondary-light;
+    color: $color-secondary-light;
+    // padding: 2rem;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2.5rem;
+}
+
+.menu-icon {
+    margin-left: 2.5rem;
+    font-size: 3rem;
+}

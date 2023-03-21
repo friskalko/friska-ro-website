@@ -24,6 +24,7 @@ export const productsPageLoader = async () => {
 
     const resp = await API.getAllProducts();
     // console.log(resp);
+    console.log(resp.data.data);
     const allProducts = resp.data.data.products;
     return allProducts;
 };
