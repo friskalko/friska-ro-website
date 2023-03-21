@@ -18,13 +18,19 @@ const ProductInfoPage = () => {
     const product = useLoaderData();
 
     const images = [product.imageCover];
-    images.push(
-        'https://images.unsplash.com/photo-1677061857086-8175847f19fd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw2fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60'
-    );
-    images.push(
-        'https://images.unsplash.com/photo-1676963472951-04a8c0f1f3fc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw1fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60'
-    );
-
+    // images.push(
+    //     'https://images.unsplash.com/photo-1677061857086-8175847f19fd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw2fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60'
+    // );
+    // images.push(
+    //     'https://images.unsplash.com/photo-1676963472951-04a8c0f1f3fc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw1fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60'
+    // );
+    for (let i = 0; i < images.length; i++) {
+        let temp = images[i];
+        const start = temp.indexOf('/d/') + 3;
+        const end = temp.indexOf('/view');
+        const id = temp.slice(start, end);
+        images[i] = `https://drive.google.com/uc?export=view&id=${id}`;
+    }
     const formSubmitHandler = (e) => {
         e.preventDefault();
         console.log('form submitted');
@@ -40,7 +46,10 @@ const ProductInfoPage = () => {
                     </div>
                     <div className={styles['main-container__info']}>
                         <div>{product.name}</div>
-                        <div className={styles['summary']}> {summ}</div>
+                        <div className={styles['summary']}>
+                            {product.category}
+                        </div>
+                        {/* <h2 className={styles['category']}> {summ}</h2> */}
                         <button
                             className={styles['send-enquiry']}
                             onClick={handleOpen}
@@ -54,11 +63,7 @@ const ProductInfoPage = () => {
                         Product Description
                     </h2>
                     <p className={styles['description__text']}>
-                        {product.description} Lorem ipsum dolor sit amet,
-                        consectetur adipisicing elit. Quisquam, est labore
-                        repudiandae ullam dignissimos veritatis unde quos
-                        officia sit facilis vel rerum laudantium iusto culpa!
-                        Placeat nisi laboriosam quasi non.
+                        {product.description}
                     </p>
                 </div>
                 <div className={styles['specs-container']}>
