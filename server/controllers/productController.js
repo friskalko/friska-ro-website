@@ -37,21 +37,22 @@ exports.getAllProducts = catchAsync(async (req, res, next) => {
 exports.getOneProduct = catchAsync(async (req, res, next) => {
     const product = await Product.findById(req.params.productID);
 
-    const imgCover = product.imageCover;
-    let temp = product.imageCover;
-    const start = temp.indexOf('/d/') + 3;
-    const end = temp.indexOf('/view');
-    const id = temp.slice(start, end);
-    product.imageCover = `https://drive.google.com/uc?export=view&id=${id}`;
     // IF PRODUCT IS NOT FOUND THEN GIVE ERROR
     if (!product) {
         return next(new AppError('No Product found with given ID', 404));
     }
 
+    let temp = product.imageCover;
+    const start = temp.indexOf('/d/') + 3;
+    const end = temp.indexOf('/view');
+    const id = temp.slice(start, end);
+    product.imageCover = `https://drive.google.com/uc?export=view&id=${id}`;
+
     const data = {
         product,
     };
 
+    // console.log(data);
     res.status(200).json({
         status: 'success',
         data,

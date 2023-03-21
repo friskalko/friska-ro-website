@@ -17,6 +17,7 @@ const ProductInfoPage = () => {
 
     const product = useLoaderData();
     console.log(product);
+    // console.log()
     const images = [product.imageCover];
     // images.push(
     //     'https://images.unsplash.com/photo-1677061857086-8175847f19fd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw2fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60'
