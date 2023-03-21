@@ -16,7 +16,7 @@ const ProductInfoPage = () => {
     const handleClose = () => setOpen(false);
 
     const product = useLoaderData();
-
+    console.log(product);
     const images = [product.imageCover];
     // images.push(
     //     'https://images.unsplash.com/photo-1677061857086-8175847f19fd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw2fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60'
@@ -24,13 +24,13 @@ const ProductInfoPage = () => {
     // images.push(
     //     'https://images.unsplash.com/photo-1676963472951-04a8c0f1f3fc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw1fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60'
     // );
-    for (let i = 0; i < images.length; i++) {
-        let temp = images[i];
-        const start = temp.indexOf('/d/') + 3;
-        const end = temp.indexOf('/view');
-        const id = temp.slice(start, end);
-        images[i] = `https://drive.google.com/uc?export=view&id=${id}`;
-    }
+    // for (let i = 0; i < images.length; i++) {
+    //     let temp = images[i];
+    //     const start = temp.indexOf('/d/') + 3;
+    //     const end = temp.indexOf('/view');
+    //     const id = temp.slice(start, end);
+    //     images[i] = `https://drive.google.com/uc?export=view&id=${id}`;
+    // }
     const formSubmitHandler = (e) => {
         e.preventDefault();
         console.log('form submitted');
